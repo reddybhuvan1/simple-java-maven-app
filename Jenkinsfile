@@ -1,28 +1,20 @@
 node {
         stage('SCM') {
-            steps {
                 echo 'Fetching the code'
                 git changelog: false, poll: false, url: 'https://github.com/TechWithKhanam/simple-java-maven-app.git'
             }
-        }
         stage('BUILD') {
-            steps {
                 echo 'Building the project'
                 bat 'mvn clean install'
             }
-        }
         stage('TEST') {
-            steps {
                 echo 'Testing the project'
                 bat 'mvn test'
             }
-        }
         stage('VERIFY DOCKERFILE') {
-            steps {
                 echo 'Verifying Dockerfile presence'
                 bat 'dir'
             }
-        }
         stage('DEPLOY') {
                 echo 'Deploying the project in Docker container'
                 script {
