@@ -1,7 +1,4 @@
-pipeline {
-    agent any
-
-    stages {
+node {
         stage('SCM') {
             steps {
                 echo 'Fetching the code'
@@ -27,7 +24,6 @@ pipeline {
             }
         }
         stage('DEPLOY') {
-            steps {
                 echo 'Deploying the project in Docker container'
                 script {
                     // Check if Docker is running and available
@@ -40,6 +36,4 @@ pipeline {
                     bat 'docker run -d -p 9090:8080 --name myapp2_container myapp1:latest'
                 }
             }
-        }
     }
-}
