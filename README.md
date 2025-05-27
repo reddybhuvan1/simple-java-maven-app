@@ -14,6 +14,6 @@ you'll be creating yourself during the tutorial and the `jenkins/scripts` subdir
 contains a shell script with commands that are executed when Jenkins processes
 the "Deliver" stage of your Pipeline.
 
-test commit for jenkins pipeline test
+test 2ndcommit for jenkins pipeline test
 
 =============================================================================================================
